@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Static Template</title>
+    <link type="text/css" href="{% static 'css/bt4.min.css' %}">
+</head>
+<body>
+    {% block content %}
+    {% endblock content %}
+
+
+<script type="text/javascript" src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+
+</body>
+</html>
