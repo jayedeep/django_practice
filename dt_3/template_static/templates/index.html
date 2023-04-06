@@ -2,7 +2,9 @@
 {% load uppercase_all_charactor %}
 {% load simple_tag_timezone %}
 {% load inclusion_tag_example %}
-
+{% block title %}
+Home Page
+{% endblock title %}
 {% block content %}
 <h1>{{random_text|uppercase_all_charactor}}</h1>
 {% current_time format as the_time %}

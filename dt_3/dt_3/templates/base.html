@@ -3,7 +3,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Static Template</title>
+    <title>
+        {% block title %}
+        {{title_name}}
+        {% endblock title %}
+    </title>
     <link rel="stylesheet" href="{% static 'css/bt4.min.css' %}">
 </head>
 <body>
