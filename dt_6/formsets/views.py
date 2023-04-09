@@ -69,7 +69,7 @@ def create_tasks_formsets(request):
         if formset.is_valid():
             for form in formset:
                 print(".>>>>>>form",form.cleaned_data)
-                if not form.cleaned_data['DELETE']:
+                if form.cleaned_data.get('DELETE',None) and not form.cleaned_data.get('DELETE'):
                     task = Task.objects.create(name=form.cleaned_data['name'],description=form.cleaned_data['description'])
                     task.save()
                     print('........task has been saved!!!!!')
