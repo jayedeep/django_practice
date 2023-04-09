@@ -6,15 +6,21 @@ from django.core.exceptions import ValidationError
 from .models import Student
 from .custom_widgets import MySelectWidget
 
-class StudentForm(forms.ModelForm):
-    states = [('gujarat','Gujarat'),('rajsthan','Rajsthan'),('maharastra','Maharastra')]
 
+def custom_validator(value):
+    if len(value.split(' '))>1:
+        raise ValidationError('Please enter only one word')
+
+class StudentForm(forms.ModelForm):
+
+    states = [('gujarat','Gujarat'),('rajsthan','Rajsthan'),('maharastra','Maharastra')]
+    name = forms.CharField(validators=[custom_validator],widget=forms.TextInput(attrs={'class': 'form-control'}))
     state = forms.ChoiceField(choices=states,widget=MySelectWidget(attrs={'class': 'form-control custom-class'}))
     class Meta:
         model = Student
         fields = '__all__'
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            # 'name': forms.TextInput(attrs={'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
             'phone': forms.TextInput(attrs={'class': 'form-control','type': 'number'}),
             # 'state': MySelectWidget(attrs={'class': 'form-control custom-class'})
