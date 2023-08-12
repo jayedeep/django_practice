@@ -63,13 +63,17 @@
     <div id="form-template" style="display: none;">
         <div class="form-row dynamic-form">
             <div class="col-md-4 offset-md-2">
-                <input type="text" name="{{ formset.prefix }}-__prefix__-name" class="form-control">
+                {{ formset.empty_form.name }}
+<!--                <input type="text" name="{{ formset.prefix }}-__prefix__-name" class="form-control">-->
             </div>
             <div class="col-md-4">
-                <input type="description" name="{{ formset.prefix }}-__prefix__-description" class="form-control">
+                {{ formset.empty_form.description }}
+<!--                <input type="description" name="{{ formset.prefix }}-__prefix__-description" class="form-control">-->
             </div>
             <div class="col-md-2 form-row-actions">
                 <button type="button" class="btn btn-danger delete-row">Remove</button>
+                <input type="hidden" name="{{ formset.prefix }}-{{ formset.empty_form.DELETE.name }}" value="false" id="{{ formset.prefix }}-{{ formset.empty_form.DELETE.id_for_label }}">
+
             </div>
         </div>
     </div>
