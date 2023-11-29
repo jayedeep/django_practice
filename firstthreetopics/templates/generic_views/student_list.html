@@ -1,0 +1,82 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    <div class="container mt-5 bg-dark text-white border rounded">
+        <div class="header">
+            <h4 class="text-center">Student List</h4>
+        </div>
+    </div>
+
+
+
+    <div class="container bg-dark text-white border rounded">
+        {% if students %}
+
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">BOD</th>
+                <th scope="col">Character</th>
+                 <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+           {% for student in students %}
+            <tr>
+              <th scope="row">{{forloop.counter}}</th>
+              <td>{{student.name}}</td>
+              <td>{{student.email}}</td>
+              <td>{{student.date_of_birth}}</td>
+              <td>{{student.character_set.first.name}}</td>
+                <td>
+                    <a href="{% url 'student_update' student.pk %}" class="btn btn-sm btn-primary" >Edit</a>
+                    <a href="{% url 'student_delete' student.pk %}" class="btn btn-sm btn-danger" >Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <h6>Please Check there are no any student in Mystic Falls</h6>
+        {% endif %}
+    </div>
+
+  <div class="container bg-dark text-white border rounded">
+        {% if humans %}
+
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">BOD</th>
+                <th scope="col">Character</th>
+                 <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+           {% for student in humans %}
+            <tr>
+              <th scope="row">{{forloop.counter}}</th>
+              <td>{{student.name}}</td>
+              <td>{{student.email}}</td>
+              <td>{{student.date_of_birth}}</td>
+              <td>{{student.character_set.first.name}}</td>
+                <td>
+                    <a href="{% url 'student_update' student.pk %}" class="btn btn-sm btn-primary" >Edit</a>
+                    <a href="{% url 'student_delete' student.pk %}" class="btn btn-sm btn-danger" >Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <h6>Please Check there are no any student in Mystic Falls</h6>
+        {% endif %}
+    </div>
+
+{% endblock content %}

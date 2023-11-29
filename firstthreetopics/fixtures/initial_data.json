@@ -1,0 +1,62 @@
+[
+  {
+    "model": "firstthreetopics.student",
+    "pk": 4,
+    "fields": {
+      "created_at": "2023-11-25T12:04:06.189Z",
+      "updated_at": "2023-11-25T12:04:06.189Z",
+      "name": "caroline",
+      "email": "caroline@gmail.com",
+      "date_of_birth": "2003-11-30T12:04:06.188Z"
+    }
+  },
+  {
+    "model": "firstthreetopics.student",
+      "pk": 5,
+    "fields": {
+      "created_at": "2023-11-25T12:04:06.231Z",
+      "updated_at": "2023-11-25T12:04:06.231Z",
+      "name": "klaus",
+      "email": "klaus@gmail.com",
+      "date_of_birth": "1824-01-13T12:04:06.231Z"
+    }
+  },
+  {
+    "model": "firstthreetopics.student",
+      "pk": 6,
+    "fields": {
+      "created_at": "2023-11-25T12:04:06.232Z",
+      "updated_at": "2023-11-25T12:04:06.232Z",
+      "name": "bonnie",
+      "email": "bonnie@gmail.com",
+      "date_of_birth": "2003-11-30T12:04:06.188Z"
+    }
+  },
+  {
+    "model": "firstthreetopics.character",
+    "fields": {
+      "created_at": "2023-11-25T12:04:06.231Z",
+      "updated_at": "2023-11-25T12:04:06.231Z",
+      "student": 4,
+      "name": "new vampire"
+    }
+  },
+  {
+    "model": "firstthreetopics.character",
+    "fields": {
+      "created_at": "2023-11-25T12:04:06.232Z",
+      "updated_at": "2023-11-25T12:04:06.232Z",
+      "student": 5,
+      "name": "Original vampire"
+    }
+  },
+  {
+    "model": "firstthreetopics.character",
+    "fields": {
+      "created_at": "2023-11-25T12:04:06.233Z",
+      "updated_at": "2023-11-25T12:04:06.233Z",
+      "student": 6,
+      "name": "Witch"
+    }
+  }
+]
