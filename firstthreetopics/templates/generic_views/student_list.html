@@ -5,6 +5,9 @@
         <div class="header">
             <h4 class="text-center">Student List</h4>
         </div>
+        <div class="d-flex justify-content-center">
+            <a href="{% url 'student_create' %}" class="btn btn-primary">Create New</a>
+        </div>
     </div>
 
 
@@ -32,6 +35,7 @@
               <td>{{student.date_of_birth}}</td>
               <td>{{student.character_set.first.name}}</td>
                 <td>
+                    <a href="{% url 'student_detail' student.pk %}" class="btn btn-sm btn-success" >Detail</a>
                     <a href="{% url 'student_update' student.pk %}" class="btn btn-sm btn-primary" >Edit</a>
                     <a href="{% url 'student_delete' student.pk %}" class="btn btn-sm btn-danger" >Delete</a>
                 </td>

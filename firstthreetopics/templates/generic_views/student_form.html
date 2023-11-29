@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5 bg-dark text-white border rounded">
+        <div class="header">
+            <h4 class="text-center">{{page_name}}</h4>
+        </div>
+    </div>
+<div class="container mt-5 bg-dark text-white border rounded">
+        <div class="header">
+            <h4 class="text-center">{{header_name}}</h4>
+        </div>
+    </div>
+    <div class="container bg-dark text-white border rounded">
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="form">
+        <div class="row">
+            {% for field in form %}
+             <div class="col-md-4 pb-4">
+                 {{field.label}}
+                 {{field}}
+               </div>
+            {% endfor %}
+        </div>
+        <div class="text-center py-3">
+            <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+        </div>
+
+
+    </div>
+        </form>
+
+</div>
+{% endblock content %}

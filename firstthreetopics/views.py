@@ -2,6 +2,8 @@ from django.shortcuts import render,get_object_or_404,redirect
 from django.views import View
 from django.views.generic.base import TemplateView,RedirectView
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import FormView
 from firstthreetopics.forms import StudentForm, CharacterForm
 from firstthreetopics.models import Student, Character
 from django.db.models import Q
@@ -79,8 +81,37 @@ class StudentList(ListView):
     def get_queryset(self):  # to customize queryset -> default all()
         return Student.objects.filter(character__name__icontains ='vampire')
 
-    def get_context_data(self): # custom or extra passing data
-        context = super().get_context_data()
+    def get_context_data(self,*args,**kwargs): # custom or extra passing data
+        context = super().get_context_data(*args,**kwargs)
         context['humans'] = Student.objects.filter(~Q(character__name__icontains ='vampire'))
         return context
 
+class StudentDetail(DetailView): # used to Display single record
+    model = Student  # model Name
+    template_name = 'generic_views/student_detail_page.html' # template Name
+    context_object_name = 'stu' # custom name for record
+    pk_url_kwarg = 'id' # custom name to use in url -> its just name -> but initialy it will look for id/pk
+
+    def get_context_data(self,*args,**kwargs):
+        context = super().get_context_data(*args,**kwargs)
+        context['page_name'] = 'Student Detail'
+        return context
+
+class StudentCreateForm(FormView):
+    template_name = 'generic_views/student_form.html'
+    form_class = StudentForm
+    success_url = '/cbv'
+
+    def form_valid(self, form):
+
+        if form.is_valid():
+            student = form.save()
+            Character.objects.create(name = 'Human being',student=student)
+        else:
+            print(">>>>>> invalid",form.errors)
+        return redirect(self.success_url)
+
+    def get_context_data(self,*args,**kwargs):
+        context = super().get_context_data(*args,**kwargs)
+        context['page_name'] = 'Student Form'
+        return context
