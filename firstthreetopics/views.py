@@ -3,10 +3,12 @@ from django.views import View
 from django.views.generic.base import TemplateView,RedirectView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView,CreateView
 from firstthreetopics.forms import StudentForm, CharacterForm
 from firstthreetopics.models import Student, Character
 from django.db.models import Q
+from django import forms
+
 
 # Create your views here.
 class HomePageView(TemplateView): # to render home page as templateview
@@ -97,13 +99,12 @@ class StudentDetail(DetailView): # used to Display single record
         context['page_name'] = 'Student Detail'
         return context
 
-class StudentCreateForm(FormView):
-    template_name = 'generic_views/student_form.html'
-    form_class = StudentForm
-    success_url = '/cbv'
+class StudentCreateForm(FormView): # used to render form in template
+    template_name = 'generic_views/student_form.html' # custom template name
+    form_class = StudentForm # form class that u have made
+    success_url = '/cbv' # after successful submit form redirect to this url
 
-    def form_valid(self, form):
-
+    def form_valid(self, form): # used to customize my form validation and saving character
         if form.is_valid():
             student = form.save()
             Character.objects.create(name = 'Human being',student=student)
@@ -111,7 +112,35 @@ class StudentCreateForm(FormView):
             print(">>>>>> invalid",form.errors)
         return redirect(self.success_url)
 
-    def get_context_data(self,*args,**kwargs):
+    def get_context_data(self,*args,**kwargs):  # used for main perpose to send the extra data into template
         context = super().get_context_data(*args,**kwargs)
+        context['page_name'] = 'Student Form'
+        return context
+
+
+class StudentCreate2Form(CreateView): # used for Creating a new student
+    template_name = 'generic_views/student_form.html'
+    # model = Student
+    # fields = ['name','email','date_of_birth'] # field names which will be used as form in template
+    form_class = StudentForm # if u have used model and fields then no need this else use form_class to display form
+    success_url = '/cbv'
+
+    # def get_form(self): # if u have used model and fields then form need to have customize(like adding class of bt4)
+    #     form = super().get_form()
+    #     form.fields['date_of_birth'].widget = forms.DateInput(attrs={'class': 'date-input','type': 'date'})
+    #     for field in form.fields:
+    #         form.fields[field].widget.attrs['class'] = 'form-control'
+    #     return form
+
+    def form_valid(self, form): # used to validate custom , no need this method if i dont need to save character here.
+        if form.is_valid():
+            student = form.save()
+            Character.objects.create(name = 'Human being',student=student)
+        else:
+            print(">>>>>> invalid",form.errors)
+        return redirect(self.success_url)
+
+    def get_context_data(self, *args, **kwargs): # used to send extra data
+        context = super().get_context_data(*args, **kwargs)
         context['page_name'] = 'Student Form'
         return context
