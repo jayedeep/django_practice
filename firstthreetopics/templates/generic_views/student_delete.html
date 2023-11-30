@@ -1,0 +1,18 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    <div class="container mt-5 bg-dark text-white border rounded">
+        <div class="header">
+            <h4 class="text-center">{{page_name}}</h4>
+        </div>
+    </div>
+    <div class="container bg-dark text-white border rounded text-center">
+        <form method="post" action="">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            <a href="{% url 'student_list' %}" class="btn btn-danger btn-sm">Cancel</a>
+        </form>
+    </div>
+
+
+{% endblock content %}

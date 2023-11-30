@@ -3,7 +3,7 @@ from django.views import View
 from django.views.generic.base import TemplateView,RedirectView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import FormView,CreateView,UpdateView
+from django.views.generic.edit import FormView,CreateView,UpdateView,DeleteView
 from firstthreetopics.forms import StudentForm, CharacterForm
 from firstthreetopics.models import Student, Character
 from django.db.models import Q
@@ -158,3 +158,7 @@ class StudentUpdateForm(UpdateView): # used for the update current record / ever
             form.fields[field].widget.attrs['class'] = 'form-control'
         return form
 
+class StudentDelete(DeleteView): # used to delete the student record
+    model = Student
+    template_name = 'generic_views/student_delete.html' # custom template to confirm that record delete or cancel
+    success_url = '/cbv'
