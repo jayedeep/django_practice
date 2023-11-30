@@ -3,7 +3,7 @@ from django.views import View
 from django.views.generic.base import TemplateView,RedirectView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import FormView,CreateView
+from django.views.generic.edit import FormView,CreateView,UpdateView
 from firstthreetopics.forms import StudentForm, CharacterForm
 from firstthreetopics.models import Student, Character
 from django.db.models import Q
@@ -144,3 +144,17 @@ class StudentCreate2Form(CreateView): # used for Creating a new student
         context = super().get_context_data(*args, **kwargs)
         context['page_name'] = 'Student Form'
         return context
+
+class StudentUpdateForm(UpdateView): # used for the update current record / everything same as createview
+    # change only in urls.py to send the pk to get the record detail pre-filled in form
+    template_name = 'generic_views/student_form.html'
+    model = Student
+    fields = ['name', 'email', 'date_of_birth']
+
+    def get_form(self): # if u have used model and fields then form need to have customize(like adding class of bt4)
+        form = super().get_form()
+        form.fields['date_of_birth'].widget = forms.DateInput(attrs={'class': 'date-input','type': 'date'})
+        for field in form.fields:
+            form.fields[field].widget.attrs['class'] = 'form-control'
+        return form
+

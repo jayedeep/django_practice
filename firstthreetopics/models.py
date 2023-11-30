@@ -22,7 +22,7 @@ class Student(Base):
         unique_together = ('email', 'name')
 
     def get_absolute_url(self):
-        return reverse('student_detail',kwargs={'pk':self.pk})
+        return reverse('student_detail',kwargs={'id':self.pk})
 
 class Character(Base):
     student = models.ForeignKey(Student,on_delete=models.CASCADE)
