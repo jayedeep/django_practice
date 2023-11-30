@@ -67,10 +67,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
 ]
+TEMPLATES[0]['OPTIONS']['context_processors'].append('firstthreetopics.context_processors.get_name_globally')
+
+
 
 WSGI_APPLICATION = 'practice_1.wsgi.application'
 
