@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb154dbb-182c-4be8-9db6-126d6914dcd8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/firstthreetopics/context_processors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstthreetopics/templates/generic_views/student_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/firstthreetopics/templates/generic_views/student_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstthreetopics/templates/generic_views/student_detail_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/firstthreetopics/templates/generic_views/student_detail_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstthreetopics/templates/generic_views/student_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/firstthreetopics/templates/generic_views/student_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstthreetopics/templates/generic_views/student_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/firstthreetopics/templates/generic_views/student_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/practice_1/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
