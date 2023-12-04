@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-CUSTOM_APPS = ['firstthreetopics']
+CUSTOM_APPS = [
+    'formpractice'
+]
 
 INSTALLED_APPS = INSTALLED_APPS + CUSTOM_APPS
 
@@ -72,7 +74,7 @@ TEMPLATES = [
         },
     },
 ]
-TEMPLATES[0]['OPTIONS']['context_processors'].append('firstthreetopics.context_processors.get_name_globally')
+# TEMPLATES[0]['OPTIONS']['context_processors'].append('firstthreetopics.context_processors.get_name_globally')
 
 
 
@@ -85,7 +87,7 @@ WSGI_APPLICATION = 'practice_1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'formpractice.sqlite3',
     }
 }
 
