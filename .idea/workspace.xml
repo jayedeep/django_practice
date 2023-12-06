@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb154dbb-182c-4be8-9db6-126d6914dcd8" name="Changes" comment="">
+    <list default="true" id="eb154dbb-182c-4be8-9db6-126d6914dcd8" name="Changes" comment="added new practice for crud with form,view,template">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstthreetopics/templates/generic_views/student_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/firstthreetopics/templates/generic_views/student_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstthreetopics/templates/generic_views/student_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/firstthreetopics/templates/generic_views/student_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formpractice/templates/formpractice/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/formpractice/templates/formpractice/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formpractice/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/formpractice/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,0 +1,24 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="card content col-6 offset-md-3 mt-5" >
+    <h5 class="card-header">Teacher Update</h5>
+    <div class="row p-2">
+
+            <form method="post" action="">
+                {% csrf_token %}
+                {% for field in teacher_form %}
+                    {% include './common_fields.html' with field=field %}
+                {% endfor %}
+                <div class="text-center m-4">
+                    <button type="submit" class="btn btn-sm btn-primary"> Submit </button>
+
+                </div>
+            </form>
+    </div>
+    <div class="card-footer">
+        <a href="{% url 'home' %}" class="btn btn-sm btn-danger">Back</a>
+    </div>
+</div>
+
+{% endblock content %}

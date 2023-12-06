@@ -41,7 +41,9 @@ INSTALLED_APPS = [
 ]
 
 CUSTOM_APPS = [
-    'formpractice'
+    'formpractice',
+    'modelformpractice',
+    'imageformpractice'
 ]
 
 INSTALLED_APPS = INSTALLED_APPS + CUSTOM_APPS
@@ -143,3 +145,7 @@ MESSAGE_TAGS = {
         messages.WARNING: 'warning',
         messages.ERROR: 'danger',
  }
+
+MEDIA_URL = '/media/'
+import os
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

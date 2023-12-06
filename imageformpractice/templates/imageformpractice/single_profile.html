@@ -1,0 +1,25 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="card content col-6 offset-md-3 mt-5" >
+    <h5 class="card-header">Student</h5>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                {{profile.name}}
+            </div>
+            <div class="col-md-4">
+                <img src="{{profile.profile_pic.url}}" class="rounded mx-auto d-block img-thumbnail" alt="{{profile.name}}">
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'download_file' id=profile.id %}" class="btn btn-primary">Download File</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a href="{% url 'home' %}" class="btn btn-sm btn-danger">Back</a>
+    </div>
+</div>
+
+{% endblock content %}
