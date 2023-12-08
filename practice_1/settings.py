@@ -43,7 +43,8 @@ INSTALLED_APPS = [
 CUSTOM_APPS = [
     'formpractice',
     'modelformpractice',
-    'imageformpractice'
+    'imageformpractice',
+    'autheticationsimple'
 ]
 
 INSTALLED_APPS = INSTALLED_APPS + CUSTOM_APPS

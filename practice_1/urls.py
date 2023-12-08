@@ -24,7 +24,8 @@ urlpatterns = [
     # path('',include('firstthreetopics.urls'))
     # path('',include('formpractice.urls'))
     # path('',include('modelformpractice.urls'))
-    path('',include('imageformpractice.urls'))
+    path('',include('imageformpractice.urls')),
+    path('',include('autheticationsimple.urls'))
 
 ]
 if settings.DEBUG:
