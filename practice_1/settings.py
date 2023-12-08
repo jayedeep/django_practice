@@ -44,7 +44,8 @@ CUSTOM_APPS = [
     'formpractice',
     'modelformpractice',
     'imageformpractice',
-    'autheticationsimple'
+    'autheticationsimple',
+    'autheticationcbv'
 ]
 
 INSTALLED_APPS = INSTALLED_APPS + CUSTOM_APPS
@@ -94,6 +95,7 @@ DATABASES = {
     }
 }
 
+LOGIN_REDIRECT_URL = 'home'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -146,6 +148,7 @@ MESSAGE_TAGS = {
         messages.WARNING: 'warning',
         messages.ERROR: 'danger',
  }
+
 
 MEDIA_URL = '/media/'
 import os
