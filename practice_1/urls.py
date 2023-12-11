@@ -26,7 +26,8 @@ urlpatterns = [
     # path('',include('modelformpractice.urls'))
     # path('',include('imageformpractice.urls')),
     # path('',include('autheticationsimple.urls')),
-    path('',include('autheticationcbv.urls'))
+    # path('',include('autheticationcbv.urls'))
+    path('',include('customauthenticate.urls'))
 
 ]
 if settings.DEBUG:

@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 
@@ -45,10 +44,12 @@ CUSTOM_APPS = [
     'modelformpractice',
     'imageformpractice',
     'autheticationsimple',
-    'autheticationcbv'
+    'autheticationcbv',
+    'customauthenticate'
 ]
 
 INSTALLED_APPS = INSTALLED_APPS + CUSTOM_APPS
+AUTH_USER_MODEL = 'customauthenticate.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -91,7 +92,7 @@ WSGI_APPLICATION = 'practice_1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'formpractice.sqlite3',
+        'NAME': BASE_DIR / 'customauthenticate.sqlite3',
     }
 }
 
@@ -149,6 +150,8 @@ MESSAGE_TAGS = {
         messages.ERROR: 'danger',
  }
 
+
+# LOGIN_REDIRECT_URL = '/login'
 
 MEDIA_URL = '/media/'
 import os
