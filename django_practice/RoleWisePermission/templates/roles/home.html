@@ -1,0 +1,54 @@
+{% extends '../base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="text-center">Roles Wise Permission</h4>
+        {% if user.is_authenticated %}
+            <div class="d-flex justify-content-between">
+                <a href="#" class="btn btn-danger">{{user.username}}</a>
+                <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+            </div>
+            {% endif %}
+        </div>
+        {% if user.is_authenticated %}
+            <div class="card-body">
+                <div class="row offset-md-3">
+
+                    <div class="card col-md-2 p-0">
+                        <a href="{% url 'add_faculty' %}" class="btn btn-primary btn-sm d-block"> Add Faculty </a>
+                    </div>
+                    <div class="card col-md-2 offset-md-3 p-0">
+                        <a href="{% url 'add_student' role='student' %}" class="btn btn-primary btn-sm d-block"> Add Student </a>
+                    </div>
+                </div>
+            </div>
+            {% if user.is_superuser %}
+                <div class="card-body">
+                    <div class="d-flex justify-content-around">
+                        <div >
+                            <a href="{% url 'create_group' %}" class="btn btn-primary btn-sm d-block"> Add Group </a>
+                        </div>
+                        <div >
+                            <a href="{% url 'group_list' %}" class="btn btn-danger btn-sm d-block"> Groups </a>
+                        </div>
+
+                        <div>
+                            <a href="#" class="btn btn-primary btn-sm d-block"> Add Permission </a>
+                        </div>
+                        <div >
+                            <a href="{% url 'list_permissions' %}" class="btn btn-danger btn-sm d-block"> Permissions </a>
+                        </div>
+                    </div>
+                </div>
+             {% endif %}
+        {% else %}
+        <div class="d-block text-center p-3">
+            <a href="{% url 'login' %}" class="btn btn-primary btn-sm"> Login </a>
+            <a href="{% url 'register' %}" class="btn btn-primary btn-sm"> Register </a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

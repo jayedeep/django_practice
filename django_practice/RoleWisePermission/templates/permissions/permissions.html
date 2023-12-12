@@ -1,0 +1,33 @@
+{% extends '../base.html' %}
+
+{% block content %}
+  <div class="container">
+
+    <div class="card col-md-6 offset-md-3 p-3">
+
+        <h2 class="bg-primary rounded px-2 mt-2">Permissions</h2>
+               {% for model_name, permissions in grouped_permissions.items %}
+                <div>
+                    <div class="card-header">
+                      <h4 class="card-title">{{ model_name }}</h4>
+                    </div>
+                    <div class="card-body">
+                            <div class="row">
+                              {% for permission in permissions %}
+                                {% for perm in permission %}
+                                  <div class="col-md-4">
+                                     <label>
+                                    <input type="checkbox"  name="permissions" value="{{ perm.id }}">
+                                         {{ perm.name }}
+                                     </label>
+                                </div>
+                                {% endfor %}
+
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+               {% endfor %}
+    </div>
+  </div>
+{% endblock content %}

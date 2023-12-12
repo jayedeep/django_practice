@@ -1,0 +1,24 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="card content col-6 offset-md-3 mt-5" >
+    <h5 class="card-header">Teacher</h5>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                {{teacher.name}}
+            </div>
+            <div class="col-md-4">
+                {{teacher.email}}
+            </div>
+            <div class="col-md-4">
+                {{teacher.age}}
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a href="{% url 'home' %}" class="btn btn-sm btn-danger">Back</a>
+    </div>
+</div>
+
+{% endblock content %}
