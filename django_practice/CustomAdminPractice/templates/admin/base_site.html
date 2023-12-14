@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Custom Admin Practice') }}{% endblock %}
+
+ {% block extrastyle %}
+    {{block.super}}
+     <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/base.css' %}"/>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Custom Admin Panel</a></h1>
+
+{% if user.is_anonymous %}
+  {% include "admin/color_theme_toggle.html" %}
+{% endif %}
+{% endblock %}
+
+
+

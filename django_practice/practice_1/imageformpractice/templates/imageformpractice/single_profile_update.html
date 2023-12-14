@@ -5,7 +5,7 @@
     <h5 class="card-header">Student Update</h5>
     <div class="row p-2">
 
-            <form method="post" action="">
+            <form method="post" action="" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in profile_form %}
                     {% include './common_fields.html' with field=field %}

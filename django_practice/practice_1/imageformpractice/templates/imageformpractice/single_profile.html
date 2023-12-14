@@ -9,10 +9,11 @@
                 {{profile.name}}
             </div>
             <div class="col-md-4">
-                {{profile.profile_pic}}
+                <img src="{{profile.profile_pic.url}}" class="rounded mx-auto d-block img-thumbnail" alt="{{profile.name}}">
             </div>
             <div class="col-md-4">
-                {{profile.file}}
+                <a href="{% url 'download_file' id=profile.id %}" class="btn btn-primary">Download File</a>
+
             </div>
         </div>
     </div>

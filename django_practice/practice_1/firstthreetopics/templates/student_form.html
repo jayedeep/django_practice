@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5 bg-dark text-white border rounded">
+        <div class="header">
+            <h4 class="text-center">{{header_name}}</h4>
+        </div>
+    </div>
+    <div class="container bg-dark text-white border rounded">
+        <form method="post" action="{% url 'student_update' student_form.instance.pk %}">
+            {% csrf_token %}
+            <div class="form">
+        <div class="row">
+            {% for field in student_form %}
+             <div class="col-md-4 pb-4">
+                 {{field.label}}
+                 {{field}}
+               </div>
+            {% endfor %}
+             <div class="col-md-4 pb-4">
+                 {{character_form.character_name.label}}
+                 {{character_form.character_name}}
+               </div>
+        </div>
+        <div class="text-center py-3">
+            <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+        </div>
+
+
+    </div>
+        </form>
+
+</div>
+{% endblock content %}

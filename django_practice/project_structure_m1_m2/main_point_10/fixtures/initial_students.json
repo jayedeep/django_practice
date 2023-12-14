@@ -1,0 +1,26 @@
+[
+  {
+        "model": "main_point_10.Student",
+        "fields": {
+          "name": "jay",
+          "surname": "talaviya",
+          "role_id": "1"
+        }
+  },
+  {
+        "model": "main_point_10.Student",
+        "fields": {
+          "name": "hiren",
+          "surname": "lakhani",
+          "role_id": "2"
+        }
+  },
+  {
+        "model": "main_point_10.Student",
+        "fields": {
+            "name": "prince",
+            "surname": "suriya",
+            "role_id": "3"
+            }
+  }
+]

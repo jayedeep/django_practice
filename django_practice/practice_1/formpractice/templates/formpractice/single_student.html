@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends './base.html' %}
+
+{% block content %}
+<div class="card content col-6 offset-md-3 mt-5" >
+    <h5 class="card-header">Student</h5>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                {{student.name}}
+            </div>
+            <div class="col-md-4">
+                {{student.email}}
+            </div>
+            <div class="col-md-4">
+                {{student.age}}
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a href="{% url 'home' %}" class="btn btn-sm btn-danger">Back</a>
+    </div>
+</div>
+
+{% endblock content %}

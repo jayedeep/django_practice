@@ -1,0 +1,28 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    <div class="container mt-5 bg-dark text-white border rounded">
+        <div class="header">
+            <h4 class="text-center">{{page_name}} - ({{city_name|upper}})</h4>
+        </div>
+    </div>
+
+
+
+    <div class="container bg-dark text-white border rounded">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Name: {{stu.name}}</h5>
+            </div>
+            <div class="col-md-6">
+                <h5>Email: {{stu.email}}</h5>
+            </div>
+            <div class="col-md-6">
+                <h5>DOB: {{stu.date_of_birth}}</h5>
+            </div>
+            <div class="col-md-6">
+                <h5>Character: {{stu.character_set.first.name}}</h5>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

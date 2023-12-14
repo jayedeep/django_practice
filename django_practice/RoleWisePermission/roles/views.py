@@ -60,7 +60,7 @@ def add_faculty(request,role='teacher'):
             user.save()
             Roles.objects.create(role_name = role,user = user)
             ##### Add Group from here
-            user.groups.create
+            # user.groups.create
             messages.success(request, f'{role} created successfully')
             return redirect('home')
         else:
